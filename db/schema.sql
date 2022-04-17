@@ -9,13 +9,13 @@ USE employeetracker_db;
 
 -- Creates the table "department" within employeetracker_db --
 CREATE TABLE department (
-id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-name VARCHAR(30) NOT NULL
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL
 );
 
 
 CREATE TABLE role (
-    id INT AUTO_INCREMENT NOT NULL PRIMARY_KEY,
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
     title VARCHAR(30) NOT NULL,
     salary DECIMAL NOT NULL,
     department_id INT,
