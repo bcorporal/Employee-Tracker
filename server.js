@@ -39,8 +39,8 @@ const questions = () => {
         'View all roles',
         'Add role',
         'View all departments',
-        'Add department',
-        'Quit'],
+        'Add department'],
+        // 'Quit'],
         validate: choice => {
           if (choice) {
             return true;

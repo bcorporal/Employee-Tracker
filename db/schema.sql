@@ -1,10 +1,10 @@
--- Drops the employee_tracker_db if it exists currently --
+-- Drops employee_tracker if it exists currently --
 DROP DATABASE IF EXISTS employee_tracker;
 
--- Creates the employee_tracker_db database --
+-- Creates the employee_tracker database --
 CREATE DATABASE employee_tracker;
 
--- Use employeetracker_db --
+-- Use employee_tracker --
 USE employee_tracker;
 
 -- Creates the table "department" within employee_tracker --
