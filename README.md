@@ -2,7 +2,7 @@ Employee Tracker
 
   
   ## Description
-  A great app for business owners to view and manage the departments, roles, salary for employees in the company.
+  A great app for business owners to view and manage departments, roles & salary for employees in the company.
 
 
   
@@ -17,24 +17,24 @@ Employee Tracker
 
 
   ## Installation
-  Node.js
+  run npm i using terminal to install dependencies mysql2, inquirer & console.table package.
+  
 
 
 
 
   ## Instructions
-  npm i using terminal to install dependencies, npm start to run app.
+  Once dependencies are installed, enter npm start to run the app.
 
   
 
 
   ## Features
-  track salaries, roles and more for staff.
-
+ Track staff, keep track of salaries, roles and more.
 
 
   ## Language(s)
-  Javascript
+  Javascript, mysql, node
 
 
 
