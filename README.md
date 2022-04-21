@@ -1,4 +1,4 @@
-  ## Employee Tracker
+Employee Tracker
 
   
   ## Description
