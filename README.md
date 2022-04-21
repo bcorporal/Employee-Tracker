@@ -1,7 +1,9 @@
 Employee Tracker
 
 Demo: https://drive.google.com/file/d/1qfPDtWs4Y-wBJEuX4RciqkW7upBR21cc/view
-Github repo https://github.com/bcorporal
+
+Github repo https://github.com/bcorporal 
+Deployed link https://bcorporal.github.io/Employee-Tracker/
   
   ## Description
   A great app for business owners to view and manage departments, roles & salary for employees in the company.
