@@ -2,7 +2,7 @@
 
   
   ## Description
-  A great app for business owners to view and manage the departments, roles, and employees in the company.
+  A great app for business owners to view and manage the departments, roles, salary for employees in the company.
 
 
   
