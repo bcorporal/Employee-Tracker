@@ -1,13 +1,13 @@
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
-const express = require("express");
+// const express = require("express");
 const table = require('console.table');
 
 const PORT = process.env.PORT || 3001;
-const app = express();
+// const app = express();
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(express.json());
 
 // Connect to database
 const connection = mysql.createConnection(
@@ -17,11 +17,11 @@ const connection = mysql.createConnection(
       user: 'root',
       // MySQL password
       password: 'music1200',
-      database: 'employeetracker'
+      database: 'employee_tracker'
     });
     connection.connect(err => {
      if (err) throw err;
-     console.log('Connected to the Employee tracker database.');
+     console.log('Connected to the employee_tracker database.');
      questions();  
     });
 
@@ -40,61 +40,54 @@ const questions = () => {
         'Add role',
         'View all departments',
         'Add department',
-        'Quit']
-    }
-  ]).then((choice) => {
-    const { choices } = choice;
-    
-     if (choices === 'View all employees') {
-        viewEmployees();
-     }
-     if (choices === 'Add employee') {
-        addEmployee();
-     }
-     if (choices === 'Update employee role') {     
-        updateEmployeeRole();
-     }  
-     if (choices === 'View all roles') {   
-        viewRoles();
-     }
-     if (choices === 'Add role') {   
-          addRole();
-     }
-     if (choices === 'View all departments') {
-          viewDepartments();
-     }
-     if (choices === 'Add department') {
-          addDepartment();
-     }
-     if (choices === 'Quit') {
-      console.log('See ya')
-          quitApp();
+        'Quit'],
+        validate: choice => {
+          if (choice) {
+            return true;
+          } else {
+            console.log('Please chose an option')
+            return false;
+          }
+          }
+        },
+  ]) .then (answers => {
+    switch (answers.choice) {
+      case 'View all employees':
+        return viewEmployees();
+
+      case 'Add employee':
+        return addEmployee();
+
+      case 'Update employee role':
+        return updateEmployee();
+
+      case 'View all roles':
+      return viewRoles();
+
+      case 'Add role':
+        addRole();
+
+      case 'View all departments':
+        return viewDepartment();
+
+      case 'Add department': 
+      return addDepartment();
+
+      // case 'Quit':
+      // return quitApp();
+     
     };
-  });
-};
-
-
-viewEmployees = () => {
-  console.log('Showing employees');
-  const sql = `SELECT roles.id, roles.title, department.name AS department
-  FROM roles
-  INNER JOIN department ON roles.department_id = department.id`;
-
-  connection.query(sql, (err, rows) => {
-    if (err) throw (err);
-    console.table(rows);
-    questions();
   });
 };
 
  const viewDepartment = () => {
   console.log('Showing departments');
-  const sql = `SELECT department.is AS id, department FROM department`;
-    
-    connection.query(sql, (err, rows) => {
-       if (err) throw err
-       console.log(rows);
-       questions();
+  const sql = `SELECT department.id AS id, department.name AS department FROM department`;
+
+  connection.query(sql, (err, rows) => {
+      if (err) throw err;
+      console.table(rows);
+      questions();
     });
  };
   
@@ -280,7 +273,7 @@ addRole = () => {
 }; 
 
 addDepartment = () => {
-  inquier.prompt([
+  inquirer.prompt([
     {
       type: 'input',
       name: 'addDepartment',
