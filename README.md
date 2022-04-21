@@ -39,6 +39,9 @@ https://user-images.githubusercontent.com/97717660/164374868-9b06ed7d-7d46-44e7-
 
   ## Features
  Track staff, keep track of salaries, roles and more.
+ 
+ <img width="1040" alt="Screen Shot 2022-04-21 at 12 56 29 AM" src="https://user-images.githubusercontent.com/97717660/164375179-9cdd058f-99ed-455c-a8ff-ead0087ddf5d.png">
+
 
 
   ## Language(s)
